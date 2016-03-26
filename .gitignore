@@ -1,0 +1,5 @@
+puphpet/config-custom.yaml
+.idea
+/project/composer.lock
+/puphpet/files/dot/ssh/*
+/.vagrant
