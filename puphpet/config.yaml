@@ -133,7 +133,7 @@ nginx:
                 - index.html
                 - index.htm
                 - index.php
-            client_max_body_size: 1m
+            client_max_body_size: 8m
             ssl: '0'
             ssl_cert: ''
             ssl_key: ''
@@ -157,57 +157,6 @@ nginx:
                     proxy: ''
                     proxy_redirect: ''
                 nxvl_m62t0iusd08w:
-                    location: '~ \.php$'
-                    autoindex: 'off'
-                    internal: 'false'
-                    try_files:
-                        - $uri
-                        - $uri/
-                        - '/index.php?$is_args$args'
-                    fastcgi: '127.0.0.1:9000'
-                    fastcgi_index: index.php
-                    fastcgi_split_path: '^(.+\.php)(/.*)$'
-                    fast_cgi_params_extra:
-                        - 'SCRIPT_FILENAME $request_filename'
-                        - 'APP_ENV dev'
-                    set:
-                        - '$path_info $fastcgi_path_info'
-                    proxy: ''
-                    proxy_redirect: ''
-        nxv_s846azwf1ibx:
-            server_name: local.backend.laravel.portfolio.ru
-            server_aliases:
-                - local.backend.laravel.portfolio.ru
-            www_root: /var/www/public
-            listen_port: '80'
-            index_files:
-                - index.html
-                - index.htm
-                - index.php
-            client_max_body_size: 1m
-            ssl: '0'
-            ssl_cert: ''
-            ssl_key: ''
-            ssl_port: '443'
-            ssl_protocols: ''
-            ssl_ciphers: ''
-            rewrite_to_https: '1'
-            spdy: '1'
-            locations:
-                nxvl_0lyqvox2r5ka:
-                    location: /
-                    autoindex: 'off'
-                    internal: 'false'
-                    try_files:
-                        - $uri
-                        - $uri/
-                        - /index.php$is_args$args
-                    fastcgi: ''
-                    fastcgi_index: ''
-                    fastcgi_split_path: ''
-                    proxy: ''
-                    proxy_redirect: ''
-                nxvl_m62t3iusd08w:
                     location: '~ \.php$'
                     autoindex: 'off'
                     internal: 'false'

@@ -13,16 +13,21 @@
 
 Route::group(['domain' => 'local.laravel.portfolio.ru', 'middleware' => ['web']], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', [
+        'uses' => 'FrontController@index',
+        'as' => 'home'
+    ]);
 
-});
+    Route::post('/project', [
+        'uses' => 'ProjectController@create',
+        'before' => ['ip', 'csrf'],
+        'as' => 'project.create'
+    ]);
 
-Route::group(['domain' => 'local.backend.laravel.portfolio.ru', 'middleware' => ['web']], function () {
-
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::post('/project/update/{id}', [
+        'uses' => 'ProjectController@update',
+        'before' => ['ip', 'csrf'],
+        'as' => 'project.update'
+    ]);
 
 });
