@@ -19,7 +19,7 @@ class CreateInfoTable extends Migration
         Schema::create($this->table, function($table)
         {
             $table->increments('id');
-            $table->string('alias');
+            $table->string('alias')->unique();
             $table->string('info');
         });
     }

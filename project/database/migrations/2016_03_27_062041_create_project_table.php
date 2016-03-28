@@ -19,7 +19,7 @@ class CreateProjectTable extends Migration
         Schema::create($this->table, function($table)
         {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('img');
             $table->text('description');
             $table->text('technology');
