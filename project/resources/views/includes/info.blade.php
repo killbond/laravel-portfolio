@@ -3,5 +3,5 @@
         {{ $entry->info }}
     </span>
 @else
-    {{ $entry->info }}
+    <span class="protect">{{ strrev($entry->info) }}</span>
 @endif

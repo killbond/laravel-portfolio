@@ -64,3 +64,8 @@ footer {
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
+
+span.protect {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
